@@ -1,11 +1,13 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
   //We have a function hasTargetSum, which passes two arguments; an array and a target.
-  //Our array contains numbers which when either of the pair is added sums to our target.
+  //Our array contains numbers which when either of the pair is added sums to our target function.
   //Then our function should return true.
-  //If we pair any random numbers and they are not equal to our target then return false.
+  //If we end our loop and no paired numbers is equal to our target then return false.
   //Suppose we have [2,4,6,9,3] as our string, and 15 as our target.
-  //Then 2 and 4 returns false; 3 and 9 returns false; 6 and 9 is 15,returns true.
+  //Then returns true, as 6 willl loop through 9 to return 15.
+  //Suppose we have[2,4,6] as our string and 12 as our target number. No paired numbers sums to 12.
+  //Then returns false.
   for (let i = 0; i < array.length; i++) {
     const comp = target - array[i];
     for (let j = i + 1; j < array.length; j++) {
@@ -21,6 +23,10 @@ hasTargetSum([6, 8, 12], 22);
 
 /* 
   Write the Big O time complexity of your function here
+  Run time: first loop = n
+            second loop = n
+            O(n^2)
+  space: O(n)          
 */
 
 /* 
